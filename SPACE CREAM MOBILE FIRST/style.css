@@ -1,0 +1,370 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    font-size: 62.5%;
+
+    --color-body: hsla(233, 100%, 97%, 1); 
+    --color-header: hsla(218, 17%, 62%, 1);
+    --color-span: hsla(232, 17%, 35%, 1);
+    --color-spbck:hsla(312, 91%, 96%, 1);
+    --ff-heading:'Staatliches', 'cursive';
+    --ff-body: 'Palanquin', 'sans-serif';
+
+    --cols:1;
+    --height-row: 400px;
+
+}
+
+body{
+background: var(--color-body);
+font-family: var(--ff-body);
+
+font-style: normal;
+font-weight: 400;
+font-size: 1.8rem;
+line-height: 1.5rem;
+
+
+}
+
+.page{
+    display: grid;
+    
+}
+
+header{
+    background: var(--color-header);
+   
+    padding-bottom: 2.9rem;
+
+    display: grid;
+    place-items: center;
+    
+    
+}
+#logo-sorvete-desktop{
+    display: none;
+
+}
+#logo-sorvete{
+    padding: 3.2rem 0;
+
+}
+header h1{
+    text-transform: uppercase;
+    font-family:var(--ff-heading);
+    color:#ffff;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 4.0rem;
+    line-height: 3.4rem;
+    letter-spacing: 0.05em;
+
+    text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.title{
+   background: hsla(275, 18%, 79%, 1); 
+   height: 4.9rem;
+   padding: 0.8rem;
+   width: 100%;
+   text-align: center;
+
+}
+
+span{
+    font-family:var(--ff-heading);
+    color: var(--color-span);
+}
+
+main{
+display: flex;
+flex-direction: column;
+align-items: center;
+
+    
+}
+
+.text{
+
+    text-align: center;
+    
+    max-width: 34rem;
+    margin-bottom: 6.0rem;
+    margin-top: 1.4rem;
+}
+
+.cards{
+display: grid;
+grid-template-columns: repeat(var(--cols), 1fr);
+gap: 3.2rem;
+
+margin-bottom: 50px;
+
+animation-fill-mode: forwards;
+animation: updown;
+animation-duration: 600ms;
+
+
+
+}
+
+ .cards .card img{
+    object-fit: cover;
+    width: 100%;
+    max-height: 45rem;
+    border-radius: 20px;
+}
+
+
+.cards .card{
+    position: relative;
+    
+}
+
+.cards .card span{
+position: absolute;
+top: 1.6rem;
+right:0;
+margin-right: 1.6rem;
+background: hsla(312, 91%, 96%, 1);
+width: 11.2rem;
+height: 3.5rem ;
+padding: 1px 2.4rem;
+border-radius: 2.0rem;
+display: grid;
+place-items: center;
+
+animation: downup;
+animation-duration: 1s;
+}
+
+.intro-desktop{
+    display: none;
+}
+
+#cream-repeat{
+    display: none;
+}
+#cream-repeat2{
+    display: none;
+}
+footer{
+    display: none;
+}
+
+@keyframes updown{
+    0%{
+        opacity: 0;
+        transform: translateY(0px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(-15px);
+    }
+
+
+}
+
+@keyframes downup {
+    0%{
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+
+}
+
+@media(min-width: 900px){
+
+    :root{
+        --cols:2;
+        --height-row: 300px;
+    }
+
+    .cards .card img{
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+    }
+    
+
+    header{
+        width: 38rem;
+        height: 100%;
+        
+    }
+
+    
+    .page{
+        display: flex;
+        
+        
+    }
+    .container{
+        margin-right: 6.4rem;
+    }
+
+    
+    
+    .intro-desktop{
+        max-width: 27.5rem;
+        display: flex;
+        text-align: center;
+        
+        font-weight: 400;
+        font-size: 1.8rem;
+        line-height: 20px;
+        
+        color: #FFFFFF;
+        font-family: 'Roboto';
+
+    }
+
+    .text{
+        display: none;
+    }
+
+    .cards{
+        padding-top: 64px;
+        padding-right: 50px;
+
+        grid-template-columns: repeat(var(--cols), 1fr);
+        grid-auto-rows: var(--height-row);
+    }
+
+    .cards .card img{
+       width: 100%;
+       height: 100%;
+    }
+    
+    
+}
+
+@media(min-width: 1105px){
+    :root{
+        --cols:3;
+        --height-row: 180px;
+    }
+
+    .title{
+        height: 7rem;
+
+    }
+
+    .title h1{
+        font-style: normal;
+        font-weight: 400;
+        font-size: 4.8rem;
+        line-height: 3.4rem;
+        
+        color: #FFFFFF;
+        display: flex;
+        flex-direction: column;
+        margin-top: 1rem;
+
+        
+    }
+
+    #logo-sorvete-desktop{
+        display: block;
+        margin-top: 3.2rem;
+        margin-bottom: 3.2rem;
+
+        animation: logo-crem; 
+        animation-duration: 1s;
+    
+    }
+
+    @keyframes logo-crem{
+
+        from {
+            margin-left: 100%;
+            width: 300%
+          }
+        
+          to {
+            margin-left: 0%;
+            width: 100%;
+          }
+
+    }
+
+    #logo-sorvete-desktop:hover{
+        scale: 1.2;
+        
+    }
+
+    #logo-sorvete{
+        display: none;
+    }
+   
+    .intro-desktop{
+        font-size: 2.4rem;
+        
+        line-height: 2.3rem;
+
+        margin-top: 3.2rem;
+
+        height: 42.8rem;
+
+    }
+
+    #cream-repeat{
+        display: flex;
+    }
+    #cream-repeat2{
+        display: flex;
+    }
+    
+    .cards div:nth-child(4){
+        grid-row: span 2 ;
+    }
+    
+    
+    .cards div:nth-child(2){
+        grid-row: span 2 ;
+    }
+    
+    .cards div:nth-child(5){
+        grid-row: span 2;
+    }
+
+    footer{
+        display: block;
+    }
+
+    footer{
+        text-align: center;
+        margin-top: 5rem;
+        margin-bottom: 4.6rem;
+    }
+    footer a{
+        font-family: 'Open Sans';
+        font-weight: 700;
+        font-size: 1.4rem;
+        line-height: 28px;
+        color: #4A4E69;
+        text-decoration: none;
+    }
+
+    footer p {
+      
+        font-size: 14px;
+        line-height: 28px;
+        color: #4A4E69;
+        font-family: 'Open Sans';
+    }
+}
